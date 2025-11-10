@@ -214,9 +214,9 @@ const ShapeBuilder = () => {
               disabled={!result.trim()}
             >
               {showCopied ? (
-                "Copied!"
+                "Copied"
               ) : (
-                <CopyIcon style={{ width: "16px", height: "16px" }} />
+                <CopyIcon style={{ width: "20px", height: "20px" }} />
               )}
             </CopyButton>
           )}

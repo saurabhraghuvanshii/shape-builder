@@ -122,7 +122,7 @@ export const OutputBox = styled.div`
 export const CopyButton = styled.button`
   position: absolute;
   top: 0;
-  right: 0;
+  right: -25px;
   background: none;
   border: none;
   cursor: pointer;
@@ -130,11 +130,11 @@ export const CopyButton = styled.button`
   display: flex;
   align-items: center;
   font-size: 12px;
-  color: ${({ theme }) => theme.text || "#FAFAFA"};
+  color: ${({ theme }) => theme.text};
 
   svg {
-    color: ${({ theme }) => theme.text || "#FAFAFA"};
-    fill: ${({ theme }) => theme.text || "#FAFAFA"};
+    color: ${({ theme }) => theme.text};
+    fill: ${({ theme }) => theme.text};
   }
 `;
 
