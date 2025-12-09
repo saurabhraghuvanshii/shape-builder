@@ -28,9 +28,9 @@ categories:
       - 'area/ci'
       - 'area/tests'
   - title: 📖 Documentation
-    label: 'area/docs'
+    labels: 'area/docs'
   - title: 🔒 Security
-    label: 'security'
+    labels: 'security'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## What's New
