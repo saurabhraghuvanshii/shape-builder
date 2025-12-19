@@ -25,7 +25,7 @@ jobs:
       - name: Upload files
         uses: actions/upload-artifact@v4
         with:
-          name: site-dir
+          name: public-dir
           path: ./public-dir.zip
           retention-days: 1
       - name: Trigger Inner workflow
