@@ -42,8 +42,7 @@ jobs:
       - name: Install dependencies
         if: github.event.action != 'closed'
         run: |
-          cd site
-          npm install --legacy-peer-deps
+          make setup
 
       - name: Set PATH_PREFIX
         if: github.event.action != 'closed'
@@ -56,8 +55,7 @@ jobs:
           GATSBY_PREVIEW: "true"
           GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
         run: |
-          cd site
-          npm run build:preview
+          make build-preview
 
           # Prevent indexing
           cat > public/robots.txt <<'EOF'
