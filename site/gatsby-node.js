@@ -7,7 +7,7 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
     path: require.resolve("path-browserify"),
     process: require.resolve("process/browser"),
     url: require.resolve("url/"),
-  };
+  };  
 
   actions.replaceWebpackConfig(config);
 };
