@@ -57,7 +57,7 @@ jobs:
           GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
         run: |
           cd site
-          PATH_PREFIX=$PATH_PREFIX npm run build
+          PATH_PREFIX=$PATH_PREFIX npm run build:preview
 
           # Prevent indexing
           cat > public/robots.txt <<'EOF'
