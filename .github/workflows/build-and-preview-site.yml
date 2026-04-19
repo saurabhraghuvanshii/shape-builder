@@ -43,12 +43,12 @@ jobs:
         if: github.event.action != 'closed'
         run: |
           cd site
-          npm install
+          npm install --legacy-peer-deps
 
       - name: Set PATH_PREFIX
         if: github.event.action != 'closed'
         run: |
-          echo "PATH_PREFIX=${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "PATH_PREFIX=pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
 
       - name: Build PR preview
         if: github.event.action != 'closed'
@@ -82,7 +82,7 @@ jobs:
           header: pr-preview
           message: |
             🚀 Preview deployment:
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+            https://drawnew.xyz/pr-preview/pr-${{ github.event.pull_request.number }}/
 
             > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
 
