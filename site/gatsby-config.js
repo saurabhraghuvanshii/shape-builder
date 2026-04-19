@@ -19,7 +19,7 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Meshery Shape Builder",
-        short_name: "Shapes",
+        short_name: "Shapes",  
         start_url: "/",
         background_color: "#3c494f",
         theme_color: "#00b39f",
