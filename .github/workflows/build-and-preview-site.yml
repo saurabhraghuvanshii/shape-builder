@@ -1,4 +1,4 @@
-name: PR Preview Deployment (Gatsby + GitHub Pages)
+name: PR Preview Deployment
 
 on:
   pull_request_target:
@@ -41,7 +41,9 @@ jobs:
 
       - name: Install dependencies
         if: github.event.action != 'closed'
-        run: npm ci
+        run: |
+          cd site
+          npm install
 
       - name: Set PATH_PREFIX
         if: github.event.action != 'closed'
@@ -54,6 +56,7 @@ jobs:
           GATSBY_PREVIEW: "true"
           GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
         run: |
+          cd site
           PATH_PREFIX=$PATH_PREFIX npm run build:preview
 
           # Prevent indexing
@@ -66,7 +69,7 @@ jobs:
         if: github.event.action != 'closed'
         uses: rossjrw/pr-preview-action@v1.6.3
         with:
-          source-dir: ./public
+          source-dir: ./site/public
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           action: auto
