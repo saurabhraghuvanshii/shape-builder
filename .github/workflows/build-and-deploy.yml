@@ -25,7 +25,7 @@ jobs:
         run: |
           make setup
           make build
-          echo "drawnew.xyz" > site/public/CNAME
+          echo "shapes.meshery.io" > site/public/CNAME
           touch site/public/.nojekyll
 
       - name: Deploy to GitHub Pages 🚀
