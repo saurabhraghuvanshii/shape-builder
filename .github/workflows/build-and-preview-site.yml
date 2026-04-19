@@ -48,7 +48,7 @@ jobs:
       - name: Set PATH_PREFIX
         if: github.event.action != 'closed'
         run: |
-          echo "PATH_PREFIX=pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "PATH_PREFIX=${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
 
       - name: Build PR preview
         if: github.event.action != 'closed'
@@ -57,7 +57,7 @@ jobs:
           GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
         run: |
           cd site
-          PATH_PREFIX=$PATH_PREFIX npm run build:preview
+          npm run build:preview
 
           # Prevent indexing
           cat > public/robots.txt <<'EOF'
