@@ -25,7 +25,7 @@ build:
 	cd site; npm run build; cd ..
 
 build-preview:
-    cd site; npm run build:preview; cd ..
+	cd site; npm run build:preview; cd ..
 
 ## Build and run site
 site:
